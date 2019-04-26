@@ -1,0 +1,21 @@
+id: '{{ObjectId()}}'
+name: '{{name}}'
+version: 1.0.0
+description: '{{description}}'
+path: /{{path}}/
+group:
+    -
+        id: OperationGroup
+        member:
+            -
+                method:
+                    - POST
+                    - GET
+                    - PUT
+                    - DELETE
+                    - OPTIONS
+                protocol:
+                    - http
+proxy:
+    target:
+        host: 'http://172.18.0.1:{{port}}'

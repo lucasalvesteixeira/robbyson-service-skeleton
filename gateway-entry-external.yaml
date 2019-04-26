@@ -1,0 +1,45 @@
+id: '{{ObjectId()}}'
+name: '{{name}}'
+version: 1.0.0
+description: '{{description}}'
+path: /{{path}}/
+group:
+    -
+        id: OperationGroup
+        member:
+            -
+                method:
+                    - POST
+                    - GET
+                    - PUT
+                    - DELETE
+                    - OPTIONS
+                protocol:
+                    - http
+                path:
+                    - '!/({{path}})'
+proxy:
+    target:
+        host: 'http://172.18.0.1:{{port}}'
+throttling:
+    -
+        timeWindow: '1 minute'
+        max: 300
+authentication:
+    strategy:
+        name: jwt
+        options:
+            extractFrom:
+                authHeader: Bearer
+                header: sessionkey
+            secretOrKey: {{secretOrKey}}
+    group:
+        - OperationGroup
+interceptor:
+    request:
+        -
+            middleware:
+                name: decode-user
+        -
+            middleware:
+                name: add-user-connection-data

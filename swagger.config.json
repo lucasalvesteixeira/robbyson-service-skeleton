@@ -1,0 +1,11 @@
+{
+  "swagger": {
+    "outputDirectory": "./dist",
+    "entryFile": "./src/bin/www.debug.ts",
+    "name": "{{name}}",
+    "description": "A Sample application using Typescipt-rest library",
+    "license": "ISC",
+    "produces": ["application/json"],
+    "version": "0.0.1"
+  }
+}
