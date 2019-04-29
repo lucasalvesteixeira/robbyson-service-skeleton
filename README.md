@@ -14,10 +14,44 @@ npm install
 npm run swagger
 ```
 
-## Project run
+## Project run (config .vscode)
+
+launch.json
 ```
-On keybord, click in button F5
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/src/bin/www.debug.ts",
+            "preLaunchTask": "buildTask",
+            "cwd": "${workspaceFolder}/dist",
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ],
+            "envFile": "${workspaceFolder}/../../variables.env"
+        }
+    ]
+}
 ```
+tasks.json
+```
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "buildTask",
+        "command": "npm",
+        "args": ["run", "build"]
+    }, {
+        "label": "testTask",
+        "command": "npm",
+        "args": ["run", "test"]
+    }]
+}
+```
+> On keybord, click in button F5
 
 ## Watch source
 ```
@@ -129,4 +163,3 @@ collection: 'collectionTest'
 ```
 sudo npm audit fix
 ```
-
