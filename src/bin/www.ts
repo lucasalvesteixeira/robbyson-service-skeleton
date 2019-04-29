@@ -3,7 +3,7 @@
 
 import { ApiServer } from '../api-server';
 
-const port: number = Number(process.env.PORT) || 8069;
+const port: number = Number(process.env.PORT) || {{port}};
 const apiServer = new ApiServer();
 
 apiServer.start(port)

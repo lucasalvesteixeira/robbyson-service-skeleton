@@ -37,7 +37,7 @@ export class ApiServer {
 
         // TODO: enable for Swagger generation error
         // Server.loadServices(this.app, 'controllers/*', __dirname);
-        Server.swagger(this.app, './swagger.json', '/api-docs', 'localhost:8069', ['http']);
+        Server.swagger(this.app, './swagger.json', '/api-docs', 'localhost:{{port}}', ['http']);
     }
 
     /**
