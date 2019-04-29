@@ -18,7 +18,7 @@
     "jsdoc-format": false,
     "label-position": true,
     "member-access": [
-      true, "check-accessor"
+      false, "check-accessor"
     ],
     "no-angle-bracket-type-assertion": false,
     "no-any": false,
