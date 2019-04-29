@@ -1,4 +1,6 @@
+## Usage & Instructions
 
+This is a setup for new projects, restricted to a certain group of developers. The use of its features depends on a preconfigured macro environment
 
 ## Configure project
 
