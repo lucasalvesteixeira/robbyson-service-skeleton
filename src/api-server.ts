@@ -26,7 +26,7 @@ export class ApiServer {
 
         // Connect to robbyson Database with contratante
         contratante.getContratantes(() => {
-            dataBase.connect(contratante, 'robbysonBoilerplate');
+            dataBase.connect(contratante, '{{database_name}}');
         });
 
         // Connect to robbyson Database without contratante
