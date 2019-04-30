@@ -3,6 +3,7 @@ doc
 logs
 coverage
 dist
+package-lock.json
 .vscode
 .nyc_output
 .DS_Store
